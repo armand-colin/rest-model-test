@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "base-font";
+    src: url("./fonts/Shippori.ttf");
+}
+
+:root {
+    --background: #111111;
+    --level-1: #222222;
+    --level-2: #333333;
+    --level-3: #444444;
+    --text: #f4f4f4;
+    --color: #1e90ff;
+    --color-light-1: #3d9efc;
+    --color-light-2: #5cafff;
+    --font: "base-font";
+
+    --font-size: 10pt;
+    --font-size-1: 7.5pt;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    background: var(--background);
+    color: var(--text);
+    font-family: var(--font);
+}
+
+p, h1, h2 {
+    padding: 0;
+    margin: 0;
+}
+
+p.small {
+    font-size: var(--font-size-1)
+}
+
+p {
+    font-size: var(--font-size)
+}
+
+input {
+    border: none;
+    outline: none;
+    color: var(--text);
+    background: var(--level-2);
+    font-size: var(--font-size);
+    font-family: var(--font);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.App {
+    display: flex;
+    & > * {
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+    }
+}

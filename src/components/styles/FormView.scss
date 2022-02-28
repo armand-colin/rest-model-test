@@ -1,0 +1,8 @@
+.FormView {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    & > *:nth-child(n + 2) {
+        margin-top: 10px;
+    }
+}

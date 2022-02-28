@@ -1,0 +1,14 @@
+.Card {
+    display: flex;
+    padding: 20px;
+    background: var(--level-1);
+    border-radius: 10px;
+    flex-direction: column;
+    cursor: pointer;
+    &:hover {
+        background: var(--level-2);
+    }
+    &:active {
+        background: var(--level-3);
+    }
+}

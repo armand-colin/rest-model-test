@@ -1,0 +1,20 @@
+.ListView {
+    display: flex;
+    flex-direction: column;
+    .elements {
+        display: flex;
+    }
+    &:not(.column) {
+        .elements > *:nth-child(n + 2) {
+            margin-left: 10px;
+        }
+    }
+    &.column {
+        .elements {
+            flex-direction: column;
+            & > *:nth-child(n + 2) {
+                margin-top: 10px;
+            }
+        }
+    }
+}
