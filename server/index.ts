@@ -6,7 +6,7 @@ import Todo from '../src/data/Todo'
 import cors from 'cors'
 import { generateUsers, generateTodos } from './mixtures'
 
-process.env.PORT = "3002"
+process.env.PORT = "3003"
 
 const app = express()
 

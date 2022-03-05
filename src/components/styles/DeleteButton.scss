@@ -1,0 +1,11 @@
+.DeleteButton {
+    background: red;
+    
+    &:hover {
+        background: #ff2222;
+    }
+
+    &:active {
+        background: #ff4444;
+    }
+}

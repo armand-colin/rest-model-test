@@ -15,7 +15,7 @@ export default class TodoManager extends EntityManager<Todo> {
             .then(([error, todos]) => {
                 if (error)
                     return
-                this.update(...todos!)
+                this.updateEntities(...todos!)
             })
     }
 
@@ -26,7 +26,7 @@ export default class TodoManager extends EntityManager<Todo> {
         }).then(([error, todo]) => {
             if (error)
                 return;
-            this.update(todo!)
+            this.updateEntities(todo!)
         })
     }
 }

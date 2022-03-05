@@ -1,0 +1,14 @@
+.Icon {
+    svg {
+        width: 15px;
+        height: 15px;
+        fill: var(--text);
+        stroke: var(--text);
+        .ionicon-fill-none {
+            fill: none;
+        }
+        .ionicon-stroke-none {
+            stroke: none;
+        }
+    }
+}

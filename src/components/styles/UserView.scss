@@ -1,7 +1,12 @@
 .UserView {
+    p {
+        position: relative;
+    }
     span.color {
         width: 10px;
         height: 10px;
         position: absolute;
+        border-radius: 10px;
+        top: 7px;
     }
 }

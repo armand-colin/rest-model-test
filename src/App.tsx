@@ -11,8 +11,11 @@ import TodoManager from './data/TodoManager';
 import TodoView from './components/TodoView';
 import Frame from './components/Frame';
 import { debug } from './decorators/debug';
+import ErrorDisplay from './components/ErrorDisplay';
+import Button from './components/Button';
+import DeleteButton from './components/DeleteButton';
 
-Request.urlPrefix = "http://localhost:3002"
+Request.urlPrefix = "http://localhost:3003"
 
 interface State {
     users: User[];
@@ -75,8 +78,8 @@ class App extends Component<{}, State> {
         UserManager.instance.create(user)
     }
 
-    private onUserClicked = (user: User) => {
-        this.setUser(user)
+    private deleteUser = (user: User) => {
+        UserManager.instance.delete(user.id)
     }
 
     render(): React.ReactNode {
@@ -92,14 +95,16 @@ class App extends Component<{}, State> {
                 <ListView
                     label="Users"
                     elements={this.state.users}
-                    onClick={this.onUserClicked}
                     render={user => {
-                        const view = <UserView {...user} />
+                        const view = user.id === this.state.user ?
+                            <Frame><UserView {...user} /></Frame> :
+                            <UserView {...user} />
 
-                        if (user.id === this.state.user)
-                            return <Frame>{view}</Frame>
-
-                        return view;
+                        return <>
+                            <Button onClick={() => this.setUser(user)}>Select</Button>
+                            <DeleteButton onClick={() => this.deleteUser(user)} />
+                            {view}
+                        </>
                     }}
                 />
                 <ListView
@@ -118,7 +123,7 @@ class App extends Component<{}, State> {
                 />
             </div>
             <div className="right">
-
+                <ErrorDisplay />
             </div>
         </div>
     }
